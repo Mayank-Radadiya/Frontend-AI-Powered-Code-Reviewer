@@ -21,7 +21,7 @@ function App() {
     setLoading(true);
     try {
       const response = await axios.post(
-        "http://localhost:3000/ai/get-response",
+        "https://backend-ai-powered-code-reviewer.vercel.app/ai/get-response",
         { code }
       );
       setReview(response.data);
