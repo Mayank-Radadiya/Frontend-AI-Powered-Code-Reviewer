@@ -9,7 +9,7 @@ import axios from "axios";
 import "./App.css";
 
 function App() {
-  const [code, setCode] = useState(`function sum(a, b) {\n  return a + b;\n}`);
+  const [code, setCode] = useState(`function sum() {\n  return a + b;\n}`);
   const [review, setReview] = useState("");
   const [loading, setLoading] = useState(false);
 
@@ -21,7 +21,7 @@ function App() {
     setLoading(true);
     try {
       const response = await axios.post(
-        "https://backend-ai-powered-code-reviewer.vercel.app/ai/get-response",
+        "http://localhost:3000/ai/get-response",
         { code }
       );
       setReview(response.data);
